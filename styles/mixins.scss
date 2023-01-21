@@ -1,0 +1,7 @@
+@mixin bg-cover ($url, $size: cover) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
