@@ -17,7 +17,7 @@ function TextContent () {
 export default function HomePage () {
   return (
     <div className={styles.home}>
-      <h1>Hi Vercel</h1>
+      <h1>Hi Vercel...</h1>
     </div>
   )
 }
