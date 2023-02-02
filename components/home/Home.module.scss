@@ -1,6 +1,28 @@
-.home {
-  position: absolute;
-  top: 55px;
-  width: 100%;
-  height: calc(100vh - 115px);
+.homeIcons {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 35px;
+  left: 35px;
+  width: 100px;
+  z-index: 5;
+}
+.menuIcon {
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.fancyText {
+  font-size: 100px;
+  letter-spacing: 10px;
+  position: fixed;
+  left: 50px;
+  top: 450px;
+  z-index: 0;
+  transform-origin: 0 50%;
+  transform: rotate(-90deg);
+  color: #d1fb96
 }

@@ -12,7 +12,9 @@ export default function Home() {
 
   return (
     <AppLayout>
+      
       <HomePage />
+
     </AppLayout>
   )
 }

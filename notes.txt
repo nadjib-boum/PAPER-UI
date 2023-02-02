@@ -1,0 +1,41 @@
+function renderClipping (path, options={
+  upper: [60, 40, 20],
+  lower: [200,400],
+  charSize: 5,
+  lineHeight: 40, 
+  radius: 20,
+  height: 500,
+  width: 500
+}) {
+  let { upper, lower, charSize, lineHeight, radius, height, width } = options;
+  let uBlocks = '';
+  let x = upper[0] * charSize;
+  let y = lineHeight;
+  for (let u = 0; u < upper.length; u++) {
+    uBlocks += `
+        L${x},${y}
+        A${radius},${radius} 0, 0 0, ${x - radius},${y + radius} 
+        L${x - radius},${y + radius + lineHeight}
+        A${radius},${radius} 0, 0 1, ${x - (radius * 2)},${y + lineHeight + (radius * 2)}
+      `;
+      x = upper[u + 1] * charSize - (radius * 2);
+      y = y + lineHeight + (radius * 2);
+  }
+  path.setAttribute('d', 
+    `M${width},${height / 2} M${width},${radius + lineHeight}
+     A${radius},${radius} 0,0 0, ${width - radius} ${lineHeight}
+     ${uBlocks}
+     L${radius},${y}
+     A${radius},${radius} 0, 0 0, 0,${y + radius}
+     L0,${lower[1]}
+     L${lower[0]},${lower[1]}
+     A${radius},${radius} 0, 0 1, ${lower[0] + radius},${lower[1] + radius}
+     L${lower[0] + radius},${width - radius}
+     A${radius},${radius} 0, 0 0,${lower[0] + (radius * 2)},${height} 
+     L${width},${height}
+     L${height},${radius + lineHeight}`
+  );
+}
+
+renderClipping (myClip.querySelector('path')); 
+
