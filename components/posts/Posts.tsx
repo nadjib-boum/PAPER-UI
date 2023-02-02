@@ -4,7 +4,7 @@ import { SVGPath1 } from '../svgPaths/SVGPaths';
 import type { RenderClippinngOptions } from '../svgPaths/SVGPaths.types';
 import type { MainPostProps, PostItemProps } from './Posts.types';
 import styles from './Posts.module.scss';
-import { breakText } from '../../utils/breakText.util';
+import { breakText } from '../../utils/breakText.util'
 
 
 function PostCircle () {
