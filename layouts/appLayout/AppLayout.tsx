@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { Roboto } from '@next/font/google';
-import HeadTag from "../head/Head";
+import HeadTag from "../../components/head/Head";
+import TopNavbar from "../../components/topNavbar/TopNavbar";
 
 
 const roboto = Roboto ({
@@ -16,6 +16,8 @@ export default function AppLayout ({ children }: any) {
       <HeadTag />
 
       <div className={`app ${roboto.className}`}>
+
+        <TopNavbar />
 
         { children }
 

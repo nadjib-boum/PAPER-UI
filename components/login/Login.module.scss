@@ -1,0 +1,58 @@
+.login {
+  .loginForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    form {
+      width: 30%;
+      border: 3px solid #111;
+      padding: 2.2em;
+      .formRow {
+        margin: 1.5em 0;
+        & > * {
+          display: block;
+          margin: .5em 0;
+        }
+        label {
+          font-weight: bold;
+        }
+        input {
+          padding: .7em;
+          width: 100%;
+          min-width: 200px;
+          border-color: #111;
+        }
+      }
+      .formOptions {
+
+        span {
+          display: block;
+          font-size: .9em;
+        }
+
+        a {
+          color: #111;
+          text-decoration: underline;
+        }
+      }
+      .formAction {
+        text-align: center;
+        padding: 2em;
+        button {
+          all: unset;
+          padding: .8em 1em;
+          background-color: #111;
+          color: #fff;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,38 +1,32 @@
-import Image from 'next/image';
-import { Rubik_Spray_Paint } from '@next/font/google';
+import { useRef, useLayoutEffect } from 'react';
+import { useSelector_ } from '../../redux/hooks';
+import AppLayout from '../../layouts/appLayout/AppLayout';
+import Navbar from '../navbar/Navbar';
 import styles from './Home.module.scss';
-import Posts from '../posts/Posts';
-import Email from '../email/Email';
-import Search from '../../public/Icons/Search.svg'
-import Menu from '../../public/Icons/Menu.svg'
 
 
-const rubik_spray_paint = Rubik_Spray_Paint({ weight: '400', subsets: ['latin-ext'] });
+export function HomePage () {
 
-function MenuButton ({ children }: any) {
+  const homeRef = useRef<HTMLDivElement> (null);
+
+  const topNav = useSelector_((state) => state.layouts.navTop);
+
+  useLayoutEffect(() => {
+    if (homeRef.current) homeRef.current.style.top = `${topNav}px`; 
+  }, [topNav]);
+  
   return (
-    <div  className={styles.menuIcon + ' flex-center'}>
-      { children }
-    </div>
-  );
-}
-
-export default function HomePage () {
-  return (
-    <div className={styles.home}>
-      <div className={styles.homeIcons}>
-        <MenuButton>
-          <Image src={Menu} height={20} width={20} alt='Menu' />
-        </MenuButton>
-        <MenuButton>
-          <Image src={Search} height={20} width={20} alt='Search' />
-        </MenuButton>
-      </div>
-      <div className={`${styles.fancyText} ${rubik_spray_paint.className}`}>
-        <span>365 MAG</span>
-      </div>
-      <Posts />
-      <Email />
+    <div className={styles.home} ref={homeRef}>
+      <Navbar />
     </div>
   )
+}
+
+
+export default function HomeLayout () {
+  return (
+    <AppLayout>
+      <HomePage />
+    </AppLayout>
+  );
 }

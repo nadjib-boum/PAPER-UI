@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+  ul {
+    display: flex;
+    a {
+      display: block;  
+      color: #333;
+    }
+  }
+  .logo {
+    span {
+      text-transform: capitalize;
+      font-family: serif;
+      font-size: 2.1rem;
+      font-weight: bold;
+    }
+  }
+  .navLinks {
+    ul a {
+      padding: 20px;
+      text-transform: uppercase;
+    }
+  }
+  .socialLinks {
+    ul a {
+      padding: 10px;
+    }
+  }
+}
